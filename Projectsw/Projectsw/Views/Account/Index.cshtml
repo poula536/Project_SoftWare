@@ -19,20 +19,54 @@
           rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="~/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="~/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="~/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="~/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="~/cs/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="~/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/cs/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
     
     <style>
         .navbar-header {
             display: none;
             margin: -10px;
         }
+
+        .footer {
+            margin: 0 -55px -60px -60px;
+        }
+
+        .navbar,
+        .navbar-inverse,
+        .navbar-fixed-top {
+            display: none;
+        }
+
+        .hero .hero__social a {
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+        }
+
+        .hero .hero__social a .fa-facebook:hover {
+            color: #1877F2;
+        }
+
+        .hero .hero__social a .fa-twitter:hover {
+            color: rgb(29, 155, 240);
+        }
+
+            .hero .hero__social a .fa-pinterest:hover {
+                color: #c00;
+            }
+
+            .hero .hero__social a .fa-instagram:hover {
+                color: #b12e89;
+            }
     </style>
 
 
@@ -49,8 +83,7 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
-                <a href="https://localhost:44314/Account/Login">Sign in</a>
-                <a href="https://localhost:44314/Account/Signup">Sign Up</a>
+                <a href="https://localhost:44314/Account/login">Sign in</a>
                 <a href="#">FAQs</a>
             </div>
             <div class="offcanvas__top__hover">
@@ -63,9 +96,9 @@
             </div>
         </div>
         <div class="offcanvas__nav__option">
-            <a href="#" class="search-switch"><img src="~/img/icon/search.png" alt=""></a>
-            <a href="#"><img src="~/img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="~/img/icon/cart.png" alt=""> <span>0</span></a>
+            <a href="#" class="search-switch"><img src="/img/icon/search.png" alt=""></a>
+            <a href="#"><img src="/img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="/img/icon/cart.png" alt=""> <span>0</span></a>
             <div class="price">$0.00</div>
         </div>
         <div id="mobile-menu-wrap"></div>
@@ -87,7 +120,7 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="https://localhost:44314/Account/Login">Sign in</a>
+                                <a href="https://localhost:44314/Account/login">Sign in</a>
                                 <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
@@ -107,13 +140,13 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="~/img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="/img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="~/Views/Account/Index.cshtml">Home</a></li>
+                            <li class="active"><a href="/Views/Account/Index.cshtml">Home</a></li>
                             <li><a href="./shop.html">Shop</a></li>
                             <li>
                                 <a href="#">Pages</a>
@@ -132,9 +165,9 @@
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="~/img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="~/img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="~/img/icon/cart.png" alt=""> <span>0</span></a>
+                        <a href="#" class="search-switch"><img src="/img/icon/search.png" alt=""></a>
+                        <a href="#"><img src="/img/icon/heart.png" alt=""></a>
+                        <a href="#"><img src="/img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
                     </div>
                 </div>
@@ -146,7 +179,7 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="~/img/hero/hero-2.jpg">
+            <div class="hero__items set-bg" data-setbg="/img/hero/hero-2.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
@@ -159,17 +192,17 @@
                                 </p>
                                 <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                                 <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://www.pinterest.com"><i class="fa fa-pinterest"></i></a>
+                                    <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
                                 </div>
-                            </div>
+                            </div>                    
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="~/img/hero/hero-2.jpg">
+            <div class="hero__items set-bg" data-setbg="/img/hero/hero-2.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
@@ -202,7 +235,7 @@
                 <div class="col-lg-7 offset-lg-4">
                     <div class="banner__item">
                         <div class="banner__item__pic">
-                            <img src="~/img/banner/banner-1.jpg" alt="">
+                            <img src="/img/banner/banner-1.jpg" alt="">
                         </div>
                         <div class="banner__item__text">
                             <h2>Clothing Collections 2030</h2>
@@ -213,7 +246,7 @@
                 <div class="col-lg-5">
                     <div class="banner__item banner__item--middle">
                         <div class="banner__item__pic">
-                            <img src="~/img/banner/banner-2.jpg" alt="">
+                            <img src="/img/banner/banner-2.jpg" alt="">
                         </div>
                         <div class="banner__item__text">
                             <h2>Accessories</h2>
@@ -224,7 +257,7 @@
                 <div class="col-lg-7">
                     <div class="banner__item banner__item--last">
                         <div class="banner__item__pic">
-                            <img src="~/img/banner/banner-3.jpg" alt="">
+                            <img src="/img/banner/banner-3.jpg" alt="">
                         </div>
                         <div class="banner__item__text">
                             <h2>Shoes Spring 2030</h2>
@@ -251,12 +284,12 @@
             <div class="row product__filter">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="~/img/product/product-1.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-1.jpg">
                             <span class="label">New</span>
                             <ul class="product__hover">
-                                <li><a href="#"><img src="~/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="~/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="~/img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -286,11 +319,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-2.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="~/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="~/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="~/img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -320,12 +353,12 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="~/img/product/product-3.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-3.jpg">
                             <span class="label">Sale</span>
                             <ul class="product__hover">
-                                <li><a href="#"><img src="~/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="~/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="~/img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -355,11 +388,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-4.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="~/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="~/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="~/img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -389,11 +422,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-5.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-5.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="~/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="~/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="~/img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -423,12 +456,12 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="~/img/product/product-6.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-6.jpg">
                             <span class="label">Sale</span>
                             <ul class="product__hover">
-                                <li><a href="#"><img src="~/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="~/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="~/img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -458,11 +491,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="~/img/product/product-7.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-7.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="~/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="~/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="~/img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -492,11 +525,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="~/img/product/product-8.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-8.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="~/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="~/~/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="~/img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -539,7 +572,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="categories__hot__deal">
-                        <img src="~/img/product-sale.png" alt="">
+                        <img src="/img/product-sale.png" alt="">
                         <div class="hot__deal__sticker">
                             <span>Sale Of</span>
                             <h5>$29.99</h5>
@@ -581,12 +614,12 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="instagram__pic">
-                        <div class="instagram__pic__item set-bg" data-setbg="~/img/instagram/instagram-1.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="~/img/instagram/instagram-2.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="~/img/instagram/instagram-3.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="~/img/instagram/instagram-4.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="~/img/instagram/instagram-5.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="~/img/instagram/instagram-6.jpg"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-1.jpg"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-2.jpg"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-3.jpg"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-4.jpg"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-5.jpg"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-6.jpg"></div>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -617,9 +650,9 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="~/img/blog/blog-1.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="/img/blog/blog-1.jpg"></div>
                         <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
+                            <span><img src="/img/icon/calendar.png" alt=""> 16 February 2020</span>
                             <h5>What Curling Irons Are The Best Ones</h5>
                             <a href="#">Read More</a>
                         </div>
@@ -627,7 +660,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="~/img/blog/blog-2.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="/img/blog/blog-2.jpg"></div>
                         <div class="blog__item__text">
                             <span><img src="img/icon/calendar.png" alt=""> 21 February 2020</span>
                             <h5>Eternity Bands Do Last Forever</h5>
@@ -637,9 +670,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="~/img/blog/blog-3.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="/img/blog/blog-3.jpg"></div>
                         <div class="blog__item__text">
-                            <span><img src="~/img/icon/calendar.png" alt=""> 28 February 2020</span>
+                            <span><img src="/img/icon/calendar.png" alt=""> 28 February 2020</span>
                             <h5>The Health Benefits Of Sunglasses</h5>
                             <a href="#">Read More</a>
                         </div>
@@ -656,10 +689,10 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="~/img/footer-logo.png" alt=""></a>
+                            <a href="#"><img src="/img/footer-logo.png" alt=""></a>
                         </div>
                         <p>The customer is at the heart of our unique business model, which includes design.</p>
-                        <a href="#"><img src="img/payment.png" alt=""></a>
+                        <a href="#"><img src="/img/payment.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
@@ -707,7 +740,7 @@
                                 document.write(new Date().getFullYear());
                             </script>2020
                             All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                                                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Devils</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
