@@ -17,7 +17,7 @@ namespace Projectsw.Models
     {
         public int Id { get; set; }
       
-        [Required(ErrorMessage = "Enter your Full Name")]
+        [Required(ErrorMessage = "Full Name*")]
         public string FullName { get; set; }
 
         [Required(ErrorMessage = "Email*")]
@@ -27,11 +27,11 @@ namespace Projectsw.Models
         [Required(ErrorMessage = "City*")]
         public string City { get; set; }
        
-        [Required(ErrorMessage = "Enter your password")]
+        [Required(ErrorMessage = "password*")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Enter your password")]
+        [Required(ErrorMessage = "password*")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Not Match")]
         public string ConfirmPassword { get; set; }

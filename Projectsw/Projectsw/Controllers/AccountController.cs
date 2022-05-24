@@ -29,7 +29,7 @@ namespace Projectsw.Controllers
                 db.NewUsers.Add(user);
                 db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
 
 

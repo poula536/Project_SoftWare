@@ -4,17 +4,72 @@
     ViewBag.Title = "Signup";
 }
 <style>
-    .signin a {
-        text-decoration: none;
+    body {
+        background-color: #4c1f76;
     }
+/*    .signin a {
+        text-decoration: none;
+    }*/
     footer,
     hr,
     .navbar-header {
         display: none;
     }
+    .signup-logo {
+        text-align: center;
+        margin-top: -10px;
+        font-size: xxx-large;
+        text-transform: uppercase;
+        color: #ed3662;
+    }
+    .form-horizontal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 20px;
+        max-width: 38%;
+        margin: auto;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        /* background-color: #4c1f76; */
+        color: beige;
+
+    }
+        .form-horizontal:hover {
+            border: solid 1px #ed3662;
+            border-radius: 50px;
+            transform: scale(1);
+            padding: 10px;
+ 
+        }
+        hr {
+            display: none;
+        }
+    .form-group input {
+        font-size: larger;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+    .form-group input:hover {
+        background-color: #ed3662;
+        color: beige;
+    }
+    .field-validation-error {
+        color: red;
+        display: block;
+    }
+    
 </style>
 
-<h2>Signup</h2>
+<h2 class="signup-logo">Signup</h2>
 
 
 @using (Html.BeginForm()) 
@@ -73,9 +128,9 @@
 </div>
 }
 <br />
-<div class="signin">
+@*<div class="signin">
     @Html.ActionLink("Back", "Login")
-</div>
+</div>*@
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
