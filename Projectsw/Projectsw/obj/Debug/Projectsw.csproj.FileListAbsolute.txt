@@ -144,8 +144,8 @@ C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\bin\System.Web.Web
 C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\bin\System.Web.Helpers.xml
 C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\bin\System.Web.Mvc.xml
 C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\obj\Debug\Projectsw.csproj.AssemblyReference.cache
 C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\obj\Debug\Projectsw.csproj.CoreCompileInputs.cache
 C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\obj\Debug\Projectsw.csproj.CopyComplete
 C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\obj\Debug\Projectsw.dll
 C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\obj\Debug\Projectsw.pdb
+C:\Users\poula\SWProject\Project_SoftWare\Projectsw\Projectsw\obj\Debug\Projectsw.csproj.AssemblyReference.cache

@@ -9,7 +9,7 @@ namespace Projectsw.Controllers
 {
     public class AccountController : Controller
     {
-        NewAcountEntities db = new NewAcountEntities();
+        NewAcountEntities1 db = new NewAcountEntities1();
         // GET: Account
         public ActionResult Index()
         {
@@ -45,6 +45,8 @@ namespace Projectsw.Controllers
         [HttpPost]
         public ActionResult Login(NewUser user)
         {
+            TempData["user_name"] = user.FullName;
+
             var result = db.NewUsers.Where(a => a.FullName == user.FullName && a.Password == user.Password).FirstOrDefault();
             if (result != null)
             {

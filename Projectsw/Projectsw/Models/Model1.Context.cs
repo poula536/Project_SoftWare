@@ -13,10 +13,10 @@ namespace Projectsw.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NewAcountEntities : DbContext
+    public partial class NewAcountEntities1 : DbContext
     {
-        public NewAcountEntities()
-            : base("name=NewAcountEntities")
+        public NewAcountEntities1()
+            : base("name=NewAcountEntities1")
         {
         }
     
@@ -26,5 +26,7 @@ namespace Projectsw.Models
         }
     
         public virtual DbSet<NewUser> NewUsers { get; set; }
+        public virtual DbSet<Order_Items> Order_Items { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }

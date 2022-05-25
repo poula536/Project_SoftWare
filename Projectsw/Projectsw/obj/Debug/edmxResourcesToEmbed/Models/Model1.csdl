@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewAcountModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NewUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ConfirmPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Order_Items" Relationship="Self.order_fk_newuser" FromRole="NewUser" ToRole="Order_Items" />
+  </EntityType>
+  <EntityType Name="Order_Items">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="item_id" Type="Int32" />
+    <Property Name="NewUser_id" Type="Int32" />
+    <Property Name="order_date" Type="DateTime" Precision="0" />
+    <Property Name="Product_id" Type="Int32" />
+    <NavigationProperty Name="NewUser" Relationship="Self.order_fk_newuser" FromRole="Order_Items" ToRole="NewUser" />
+    <NavigationProperty Name="Product" Relationship="Self.order_fk_products" FromRole="Order_Items" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Product_id" />
+    </Key>
+    <Property Name="Product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Product_price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order_Items" Relationship="Self.order_fk_products" FromRole="Products" ToRole="Order_Items" />
+  </EntityType>
+  <Association Name="order_fk_newuser">
+    <End Role="NewUser" Type="Self.NewUser" Multiplicity="0..1" />
+    <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_Items">
+        <PropertyRef Name="NewUser_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="order_fk_products">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Product_id" />
+      </Principal>
+      <Dependent Role="Order_Items">
+        <PropertyRef Name="Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NewAcountEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NewUsers" EntityType="Self.NewUser" />
+    <EntitySet Name="Order_Items" EntityType="Self.Order_Items" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <AssociationSet Name="order_fk_newuser" Association="Self.order_fk_newuser">
+      <End Role="NewUser" EntitySet="NewUsers" />
+      <End Role="Order_Items" EntitySet="Order_Items" />
+    </AssociationSet>
+    <AssociationSet Name="order_fk_products" Association="Self.order_fk_products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Order_Items" EntitySet="Order_Items" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

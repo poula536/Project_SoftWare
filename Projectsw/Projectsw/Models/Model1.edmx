@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NewAcountModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NewUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order_Items">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="item_id" Type="int" />
+          <Property Name="NewUser_id" Type="int" />
+          <Property Name="order_date" Type="date" />
+          <Property Name="Product_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Product_id" />
+          </Key>
+          <Property Name="Product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Product_price" Type="numeric" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="order_fk_newuser">
+          <End Role="NewUser" Type="Self.NewUser" Multiplicity="0..1" />
+          <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order_Items">
+              <PropertyRef Name="NewUser_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_fk_products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Product_id" />
+            </Principal>
+            <Dependent Role="Order_Items">
+              <PropertyRef Name="Product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NewAcountModelStoreContainer">
+          <EntitySet Name="NewUser" EntityType="Self.NewUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_Items" EntityType="Self.Order_Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="order_fk_newuser" Association="Self.order_fk_newuser">
+            <End Role="NewUser" EntitySet="NewUser" />
+            <End Role="Order_Items" EntitySet="Order_Items" />
+          </AssociationSet>
+          <AssociationSet Name="order_fk_products" Association="Self.order_fk_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Order_Items" EntitySet="Order_Items" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NewAcountModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NewUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order_Items" Relationship="Self.order_fk_newuser" FromRole="NewUser" ToRole="Order_Items" />
+        </EntityType>
+        <EntityType Name="Order_Items">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="item_id" Type="Int32" />
+          <Property Name="NewUser_id" Type="Int32" />
+          <Property Name="order_date" Type="DateTime" Precision="0" />
+          <Property Name="Product_id" Type="Int32" />
+          <NavigationProperty Name="NewUser" Relationship="Self.order_fk_newuser" FromRole="Order_Items" ToRole="NewUser" />
+          <NavigationProperty Name="Product" Relationship="Self.order_fk_products" FromRole="Order_Items" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Product_id" />
+          </Key>
+          <Property Name="Product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Product_price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order_Items" Relationship="Self.order_fk_products" FromRole="Products" ToRole="Order_Items" />
+        </EntityType>
+        <Association Name="order_fk_newuser">
+          <End Role="NewUser" Type="Self.NewUser" Multiplicity="0..1" />
+          <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order_Items">
+              <PropertyRef Name="NewUser_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_fk_products">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Product_id" />
+            </Principal>
+            <Dependent Role="Order_Items">
+              <PropertyRef Name="Product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NewAcountEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NewUsers" EntityType="Self.NewUser" />
+          <EntitySet Name="Order_Items" EntityType="Self.Order_Items" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <AssociationSet Name="order_fk_newuser" Association="Self.order_fk_newuser">
+            <End Role="NewUser" EntitySet="NewUsers" />
+            <End Role="Order_Items" EntitySet="Order_Items" />
+          </AssociationSet>
+          <AssociationSet Name="order_fk_products" Association="Self.order_fk_products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Order_Items" EntitySet="Order_Items" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NewAcountModelStoreContainer" CdmEntityContainer="NewAcountEntities1">
+          <EntitySetMapping Name="NewUsers">
+            <EntityTypeMapping TypeName="NewAcountModel.NewUser">
+              <MappingFragment StoreEntitySet="NewUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Items">
+            <EntityTypeMapping TypeName="NewAcountModel.Order_Items">
+              <MappingFragment StoreEntitySet="Order_Items">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="NewUser_id" ColumnName="NewUser_id" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="Product_id" ColumnName="Product_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="NewAcountModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Product_id" ColumnName="Product_id" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_price" ColumnName="Product_price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

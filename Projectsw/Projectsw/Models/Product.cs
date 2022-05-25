@@ -11,38 +11,19 @@ namespace Projectsw.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class NewUser
+    
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NewUser()
+        public Product()
         {
             this.Order_Items = new HashSet<Order_Items>();
         }
     
-        public int Id { get; set; }
-        
-        [Required(ErrorMessage = "Full Name*")]
-        public string FullName { get; set; }
-
-        [Required(ErrorMessage = "Email*")]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
-
-        [Required(ErrorMessage = "City*")]
-        public string City { get; set; }
-
-
-        [Required(ErrorMessage = "password*")]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-
-
-        [Required(ErrorMessage = "password*")]
-        [DataType(DataType.Password)]
-        [Compare("Password",ErrorMessage ="Not Match")]
-        public string ConfirmPassword { get; set; }
+        public int Product_id { get; set; }
+        public string Product_Name { get; set; }
+        public decimal Product_price { get; set; }
+        public int quantity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Items> Order_Items { get; set; }

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Projectsw.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+    footer,
+    hr,
+    .navbar-header {
+        display: none;
+    }
+</style>
+ 
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Order","../Account/Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Product_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Product_price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.quantity)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Product_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Product_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Product_id })
+    </td>
+</tr>
+    }
+
+</table>
