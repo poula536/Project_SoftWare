@@ -5,51 +5,72 @@
 }
 <style>
     body {
-        background-color: #4c1f76;
+       background-color: rgb(35, 17, 52);
     }
-/*    .signin a {
+
+    .signin a {
         text-decoration: none;
-    }*/
+        color: white;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+    .signin {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+    .signin p{
+        margin-right:10px;
+    }
+        .signin a:hover {
+            color: #ed3662;
+        }
     footer,
     hr,
     .navbar-header {
         display: none;
     }
+
     .signup-logo {
         text-align: center;
-        margin-top: -10px;
         font-size: xxx-large;
         text-transform: uppercase;
         color: #ed3662;
     }
+
     .form-horizontal {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        padding: 20px;
-        max-width: 38%;
+        max-width: 50%;
         margin: auto;
         transition: 0.5s;
         -webkit-transition: 0.5s;
         -moz-transition: 0.5s;
         -ms-transition: 0.5s;
         -o-transition: 0.5s;
-        /* background-color: #4c1f76; */
+        background-color: rgb(51, 28, 72);
         color: beige;
-
+        margin-top: -65px;
     }
+
         .form-horizontal:hover {
             border: solid 1px #ed3662;
             border-radius: 50px;
             transform: scale(1);
             padding: 10px;
- 
         }
-        hr {
-            display: none;
-        }
+
+    hr {
+        display: none;
+    }
+
     .form-group input {
         font-size: larger;
         transition: 0.5s;
@@ -58,27 +79,31 @@
         -ms-transition: 0.5s;
         -o-transition: 0.5s;
     }
-    .form-group input:hover {
-        background-color: #ed3662;
-        color: beige;
-    }
+
+        .form-group input:hover {
+            background-color: #ed3662;
+            color: beige;
+        }
+
     .field-validation-error {
         color: red;
         display: block;
     }
-    
+    .form-group{
+        margin:5px;
+    }
 </style>
 
-<h2 class="signup-logo">Signup</h2>
 
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
 
-    <hr />
+<div class="form-horizontal">
+    <h2 class="signup-logo">Signup</h2>
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(model => model.FullName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -87,7 +112,7 @@
             @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
         </div>
     </div>
-    <br />
+
     <div class="form-group">
         @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -95,7 +120,7 @@
             @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
         </div>
     </div>
-    <br />
+
     <div class="form-group">
         @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -103,7 +128,7 @@
             @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
         </div>
     </div>
-    <br />
+
     <div class="form-group">
         @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -111,7 +136,7 @@
             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
         </div>
     </div>
-    <br />
+
     <div class="form-group">
         @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -119,18 +144,20 @@
             @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
         </div>
     </div>
-    <br />
+
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Sign Up" class="btn btn-default" />
         </div>
     </div>
+    <div class="signin">
+        <p>Already have a Mastery Games account? </p>
+        @Html.ActionLink("Sign In", "Login")
+
+    </div>
 </div>
 }
-<br />
-@*<div class="signin">
-    @Html.ActionLink("Back", "Login")
-</div>*@
+
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
